@@ -4,3 +4,8 @@ playwright
 pdfplumber
 requests
 openpyxl
+streamlit
+pandas
+requests
+beautifulsoup4
+pdfplumber
