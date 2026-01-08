@@ -304,7 +304,14 @@ class StealthFetcher:
                     if proxy and proxy.get("server"):
                         browser_args["proxy"] = proxy
                     
-                    browser = await p.chromium.launch(**browser_args)
+                    try:
+    browser = await p.chromium.launch(**browser_args)
+except Exception as e:
+    # Fallback se Playwright non è installato
+    print(f"Playwright error: {e}")
+    browser_args["channel"] = "chrome"  # Prova con Chrome di sistema
+    browser = await p.chromium.launch(**browser_args)
+
                     context = await browser.new_context(
                         user_agent=get_random_user_agent(),
                         viewport={"width": random.randint(1366, 1920), "height": random.randint(768, 1080)},
