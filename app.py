@@ -1,3 +1,9 @@
+import os
+
+# Comando per installare i binari di Playwright se mancano
+if not os.path.exists("/home/adminuser/.cache/ms-playwright"):
+    os.system("playwright install chromium")
+
 import streamlit as st
 import pandas as pd
 import asyncio
