@@ -4,4 +4,3 @@ beautifulsoup4
 requests
 python-dateutil
 openpyxl
-lxml-html-clean
